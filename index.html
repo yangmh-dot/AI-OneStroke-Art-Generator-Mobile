@@ -1,103 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI One-Stroke Generator by Andy</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI One-Stroke Generator by Andy (Pro)</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h2>AI One-Stroke Art Generator 🎨</h2>
-    <p>by Andy.</p>
+    <p class="sub">by Andy.</p>
   </header>
 
   <main>
-  <label>🎯 主題 (Subject)</label>
-  <select id="subject">
-    <option value="auto">Auto</option>
-    <optgroup label="動物 Animals">      
-      <option>Cat</option><option>Dog</option><option>Rabbit</option><option>Bird</option>
-      <option>Lion</option><option>Tiger</option><option>Elephant</option><option>Fish</option>
-    </optgroup>
-    <optgroup label="人物 People">
-      <option>Girl</option><option>Boy</option><option>Artist</option><option>Dancer</option>
-      <option>Face portrait</option><option>Hand gesture</option>
-    </optgroup>
-    <optgroup label="建築 Architecture">
-      <option>House</option><option>Castle</option><option>Bridge</option><option>Temple</option>
-      <option>Street scene</option><option>City skyline</option>
-    </optgroup>
-    <optgroup label="自然 Nature">
-      <option>Tree</option><option>Mountain</option><option>Sunrise</option><option>Ocean</option>
-      <option>Flower</option><option>Galaxy</option><option>Clouds</option>
-    </optgroup>
-    <optgroup label="物品 Objects">
-      <option>Car</option><option>Motorcycle</option><option>Airplane</option><option>Guitar</option>
-      <option>Camera</option><option>Book</option><option>Coffee cup</option>
-    </optgroup>
-    <optgroup label="食物 Food">
-      <option>Ice cream</option><option>Pizza</option><option>Burger</option><option>Sushi</option>
-      <option>Fruit bowl</option><option>Cake</option>
-    </optgroup>
-    <optgroup label="抽象 / 標誌 Abstract & Logo">
-      <option>Logo</option><option>Geometric pattern</option><option>Zentangle art</option><option>Heart symbol</option>
-      <option>Spiral design</option><option>Infinity shape</option>
-    </optgroup>
-  </select>
-
-  <label>✏️ 畫具 (Sketch Tool)</label>   
-  <select id="tool">
-     <option value="auto">Auto</option>
-    <option>Pencil</option><option>Ink pen</option><option>Brush pen</option><option>Marker pen</option>
-    <option>Colored pencil</option><option>Chalk</option><option>Crayon</option><option>Charcoal stick</option>
-  </select>
-
-  <label>🎨 上色工具 (Color Tool)</label>
-    
-  <select id="colorTool">
-    <option value="auto">Auto</option>
-    <option>Color markers</option><option>Watercolor brush</option><option>Pastel</option>
-    <option>Acrylic brush</option><option>Oil brush</option><option>Digital stylus</option><option>Ink brush</option>
-  </select>
-
-  <label>🌈 色彩風格 (Color Style)</label>
-    
-  <select id="palette">
-    <option value="auto">Auto</option>
-    <option>Vibrant tones</option><option>Soft pastel</option><option>Warm earthy colors</option>
-    <option>Cool neon tones</option><option>Cartoon style</option><option>Illustration style</option>
-    <option>Realistic tone</option>
-  </select>
-
-  <label>🪵 背景 (Background)</label>
-  
-  <select id="background">
+    <label>🎯 主題 (Subject)</label>
+    <select id="subject">
       <option value="auto">Auto</option>
-    <option>White paper</option><option>Kraft paper</option><option>Wooden desk</option><option>Sketchbook texture</option><option>Black paper</option>
-  </select>
+      <optgroup label="Animals">
+        <option>Cat</option><option>Dog</option><option>Rabbit</option><option>Bird</option>
+        <option>Lion</option><option>Tiger</option><option>Elephant</option><option>Fish</option>
+      </optgroup>
+      <optgroup label="People">
+        <option>Girl</option><option>Boy</option><option>Artist</option><option>Dancer</option>
+        <option>Face portrait</option><option>Hand gesture</option>
+      </optgroup>
+      <optgroup label="Architecture">
+        <option>House</option><option>Castle</option><option>Bridge</option><option>Temple</option>
+        <option>Street scene</option><option>City skyline</option>
+      </optgroup>
+      <optgroup label="Nature">
+        <option>Tree</option><option>Mountain</option><option>Sunrise</option><option>Ocean</option>
+        <option>Flower</option><option>Galaxy</option><option>Clouds</option>
+      </optgroup>
+      <optgroup label="Objects">
+        <option>Car</option><option>Motorcycle</option><option>Airplane</option><option>Guitar</option>
+        <option>Camera</option><option>Book</option><option>Coffee cup</option>
+      </optgroup>
+      <optgroup label="Food">
+        <option>Ice cream</option><option>Pizza</option><option>Burger</option><option>Sushi</option>
+        <option>Fruit bowl</option><option>Cake</option>
+      </optgroup>
+      <optgroup label="Abstract & Logo">
+        <option>Logo</option><option>Geometric pattern</option><option>Zentangle art</option><option>Heart symbol</option>
+        <option>Spiral design</option><option>Infinity shape</option>
+      </optgroup>
+    </select>
 
-  <label>⚡ 速度 (Speed)</label>
-    
-  <select id="speed">
-    <option value="auto">Auto</option>
-    <option>Quickly</option><option>Rapidly at 2x speed</option><option>Rapidly at 4x speed</option>
-  </select>
+    <label>✏️ 畫具 (Sketch Tool)</label>
+    <select id="tool">
+      <option value="auto">Auto</option>
+      <option>Pencil</option><option>Ink pen</option><option>Brush pen</option><option>Marker pen</option>
+      <option>Colored pencil</option><option>Chalk</option><option>Crayon</option><option>Charcoal stick</option>
+    </select>
 
-  <label>⏱️ 秒數 (Total Time)</label>
-  <input id="totalTime" type="number" value="10" min="10" max="15"> 秒
+    <label>🎨 上色工具 (Color Tool)</label>
+    <select id="colorTool">
+      <option value="auto">Auto</option>
+      <option>Color markers</option><option>Watercolor brush</option><option>Pastel</option>
+      <option>Acrylic brush</option><option>Oil brush</option><option>Digital stylus</option><option>Ink brush</option>
+    </select>
 
-  <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+    <label>🌈 色彩風格 (Color Style)</label>
+    <select id="palette">
+      <option value="auto">Auto</option>
+      <option>Vibrant tones</option><option>Soft pastel</option><option>Warm earthy colors</option>
+      <option>Cool neon tones</option><option>Cartoon style</option><option>Illustration style</option>
+      <option>Realistic tone</option>
+    </select>
 
-  <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
-  <button onclick="copyPrompt()">📋 Copy</button>
-    <button onclick="randomAll()">🎲 Random All</button>
-</main>
+    <label>🪵 背景 (Background)</label>
+    <select id="background">
+      <option value="auto">Auto</option>
+      <option>White paper</option><option>Kraft paper</option><option>Wooden desk</option>
+      <option>Sketchbook texture</option><option>Black paper</option>
+    </select>
+
+    <label>⚡ 速度 (Speed)</label>
+    <select id="speed">
+      <option value="auto">Auto</option>
+      <option value="fast">Fast</option>
+      <option value="2x speed">2x Speed</option>
+      <option value="4x speed">4x Speed</option>
+    </select>
+
+    <label>⏱️ 秒數 (Total Time)</label>
+    <select id="totalTime">
+      <option value="auto">Auto</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+
+    <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+
+    <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
+    <div class="btns">
+      <button onclick="copyPrompt()">📋 Copy</button>
+      <button onclick="randomAll()">🎲 Random All</button>
+    </div>
+  </main>
 
   <footer>
     <p class="watermark">by Andy.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // (Optional) service worker registration can be added later if needed.
+  </script>
 </body>
 </html>

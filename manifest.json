@@ -1,10 +1,10 @@
 {
-  "name": "AI One-Stroke Generator by Andy",
-  "short_name": "OneStroke",
+  "name": "AI One-Stroke Generator by Andy (Pro)",
+  "short_name": "OneStroke Pro",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fafafa",
-  "theme_color": "#222",
+  "theme_color": "#111",
   "icons": [
     {
       "src": "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",

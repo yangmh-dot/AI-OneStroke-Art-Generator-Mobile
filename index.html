@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI One-Stroke Generator by Andy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>AI One-Stroke Art Generator 🎨</h2>
+    <p>by Andy.</p>
+  </header>
+
+  <main>
+    <label>🎯 主題 (Subject)</label>
+    <select id="subject">
+      <option value="cat">Cat</option>
+      <option value="dog">Dog</option>
+      <option value="flower">Flower</option>
+      <option value="mountain">Mountain</option>
+      <option value="galaxy">Galaxy</option>
+      <option value="logo">Logo</option>
+    </select>
+
+    <label>✏️ 畫具 (Sketch Tool)</label>
+    <select id="tool">
+      <option value="pencil">Pencil</option>
+      <option value="ink pen">Ink Pen</option>
+      <option value="brush pen">Brush Pen</option>
+    </select>
+
+    <label>🎨 上色工具 (Color Tool)</label>
+    <select id="colorTool">
+      <option value="color markers">Color Markers</option>
+      <option value="watercolor brush">Watercolor Brush</option>
+      <option value="pastel">Pastel</option>
+    </select>
+
+    <label>⚡ 速度 (Speed)</label>
+    <select id="speed">
+      <option value="smoothly">Smoothly</option>
+      <option value="quickly">Quickly</option>
+      <option value="rapidly at 2x speed">Rapidly at 2x Speed</option>
+    </select>
+
+    <label>⏱️ 秒數 (Total Time)</label>
+    <input id="totalTime" type="number" value="15" min="5" max="30"> 秒
+
+    <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+
+    <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
+    <button onclick="copyPrompt()">📋 Copy</button>
+  </main>
+
+  <footer>
+    <p class="watermark">by Andy.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

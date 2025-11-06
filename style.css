@@ -1,0 +1,25 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+header h2 { color: #333; margin-bottom: 0; }
+header p { color: #666; font-size: 14px; margin-top: 2px; }
+label { display: block; margin-top: 10px; font-weight: 600; }
+select, input {
+  width: 80%; padding: 6px; margin-top: 4px; border-radius: 8px; border: 1px solid #ccc;
+}
+button {
+  margin-top: 12px; padding: 10px 20px; border: none;
+  border-radius: 10px; background: #222; color: white; font-weight: bold;
+}
+textarea {
+  width: 90%; height: 160px; margin-top: 10px; border-radius: 10px; border: 1px solid #ccc; padding: 10px;
+  font-size: 14px; font-family: monospace;
+}
+.watermark {
+  position: fixed; bottom: 6px; right: 10px;
+  font-size: 13px; opacity: 0.6; color: #333;
+}

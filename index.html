@@ -13,45 +13,75 @@
   </header>
 
   <main>
-    <label>🎯 主題 (Subject)</label>
-    <select id="subject">
-      <option value="cat">Cat</option>
-      <option value="dog">Dog</option>
-      <option value="flower">Flower</option>
-      <option value="mountain">Mountain</option>
-      <option value="galaxy">Galaxy</option>
-      <option value="logo">Logo</option>
-    </select>
+  <label>🎯 主題 (Subject)</label>
+  <select id="subject">
+    <optgroup label="動物 Animals">
+      <option>Cat</option><option>Dog</option><option>Rabbit</option><option>Bird</option>
+      <option>Lion</option><option>Tiger</option><option>Elephant</option><option>Fish</option>
+    </optgroup>
+    <optgroup label="人物 People">
+      <option>Girl</option><option>Boy</option><option>Artist</option><option>Dancer</option>
+      <option>Face portrait</option><option>Hand gesture</option>
+    </optgroup>
+    <optgroup label="建築 Architecture">
+      <option>House</option><option>Castle</option><option>Bridge</option><option>Temple</option>
+      <option>Street scene</option><option>City skyline</option>
+    </optgroup>
+    <optgroup label="自然 Nature">
+      <option>Tree</option><option>Mountain</option><option>Sunrise</option><option>Ocean</option>
+      <option>Flower</option><option>Galaxy</option><option>Clouds</option>
+    </optgroup>
+    <optgroup label="物品 Objects">
+      <option>Car</option><option>Motorcycle</option><option>Airplane</option><option>Guitar</option>
+      <option>Camera</option><option>Book</option><option>Coffee cup</option>
+    </optgroup>
+    <optgroup label="食物 Food">
+      <option>Ice cream</option><option>Pizza</option><option>Burger</option><option>Sushi</option>
+      <option>Fruit bowl</option><option>Cake</option>
+    </optgroup>
+    <optgroup label="抽象 / 標誌 Abstract & Logo">
+      <option>Logo</option><option>Geometric pattern</option><option>Zentangle art</option><option>Heart symbol</option>
+      <option>Spiral design</option><option>Infinity shape</option>
+    </optgroup>
+  </select>
 
-    <label>✏️ 畫具 (Sketch Tool)</label>
-    <select id="tool">
-      <option value="pencil">Pencil</option>
-      <option value="ink pen">Ink Pen</option>
-      <option value="brush pen">Brush Pen</option>
-    </select>
+  <label>✏️ 畫具 (Sketch Tool)</label>
+  <select id="tool">
+    <option>Pencil</option><option>Ink pen</option><option>Brush pen</option><option>Marker pen</option>
+    <option>Colored pencil</option><option>Chalk</option><option>Crayon</option><option>Charcoal stick</option>
+  </select>
 
-    <label>🎨 上色工具 (Color Tool)</label>
-    <select id="colorTool">
-      <option value="color markers">Color Markers</option>
-      <option value="watercolor brush">Watercolor Brush</option>
-      <option value="pastel">Pastel</option>
-    </select>
+  <label>🎨 上色工具 (Color Tool)</label>
+  <select id="colorTool">
+    <option>Color markers</option><option>Watercolor brush</option><option>Pastel</option>
+    <option>Acrylic brush</option><option>Oil brush</option><option>Digital stylus</option><option>Ink brush</option>
+  </select>
 
-    <label>⚡ 速度 (Speed)</label>
-    <select id="speed">
-      <option value="smoothly">Smoothly</option>
-      <option value="quickly">Quickly</option>
-      <option value="rapidly at 2x speed">Rapidly at 2x Speed</option>
-    </select>
+  <label>🌈 色彩風格 (Color Style)</label>
+  <select id="palette">
+    <option>Vibrant tones</option><option>Soft pastel</option><option>Warm earthy colors</option>
+    <option>Cool neon tones</option><option>Cartoon style</option><option>Illustration style</option>
+    <option>Realistic tone</option>
+  </select>
 
-    <label>⏱️ 秒數 (Total Time)</label>
-    <input id="totalTime" type="number" value="15" min="5" max="30"> 秒
+  <label>🪵 背景 (Background)</label>
+  <select id="background">
+    <option>White paper</option><option>Kraft paper</option><option>Wooden desk</option><option>Sketchbook texture</option><option>Black paper</option>
+  </select>
 
-    <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+  <label>⚡ 速度 (Speed)</label>
+  <select id="speed">
+    <option>Smoothly</option><option>Quickly</option><option>Rapidly at 2x speed</option>
+  </select>
 
-    <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
-    <button onclick="copyPrompt()">📋 Copy</button>
-  </main>
+  <label>⏱️ 秒數 (Total Time)</label>
+  <input id="totalTime" type="number" value="15" min="5" max="30"> 秒
+
+  <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+
+  <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
+  <button onclick="copyPrompt()">📋 Copy</button>
+</main>
 
   <footer>
     <p class="watermark">by Andy.</p>

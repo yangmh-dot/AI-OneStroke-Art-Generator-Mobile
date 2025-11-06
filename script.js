@@ -2,10 +2,25 @@ function generatePrompt() {
   const subject = document.getElementById('subject').value;
   const tool = document.getElementById('tool').value;
   const colorTool = document.getElementById('colorTool').value;
+  const palette = document.getElementById('palette').value;
+  const background = document.getElementById('background').value;
   const speed = document.getElementById('speed').value;
   const totalTime = document.getElementById('totalTime').value;
+
   const sketchTime = Math.floor(totalTime * 0.45);
   const colorTime = totalTime - sketchTime;
+
+  const prompt = `
+A realistic human hand ${speed} sketching a ${subject} on ${background}, using a ${tool}, in one continuous line within ${sketchTime} seconds.
+Then the same hand starts coloring it with ${colorTool}, applying ${palette} for about ${colorTime} seconds,
+showing the transformation from sketch to finished artwork.
+A subtle watermark "by Andy." is visible in the bottom-right corner, semi-transparent and minimalistic.
+The entire process completes naturally within ${totalTime} seconds, cinematic lighting, 9:16 aspect ratio, 1080p, clean background, top-down camera focus on hand and paper.
+  `.trim();
+
+  document.getElementById('output').value = prompt;
+}
+
 
   const prompt = `
 A realistic human hand ${speed} sketching a ${subject} in one continuous line within ${sketchTime} seconds,

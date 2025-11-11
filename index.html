@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI One-Stroke Generator by Andy (Pro)</title>
-  <link rel="manifest" href="manifest.json" />
+  <title>AI One-Stroke Art Generator by Andy</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,89 +13,202 @@
   </header>
 
   <main>
-    <label>🎯 主題 (Subject)</label>
-    <select id="subject">
-      <option value="auto">Auto</option>
-      <optgroup label="Animals">
-        <option>Cat</option><option>Dog</option><option>Rabbit</option><option>Bird</option>
-        <option>Lion</option><option>Tiger</option><option>Elephant</option><option>Fish</option>
-      </optgroup>
-      <optgroup label="People">
-        <option>Girl</option><option>Boy</option><option>Artist</option><option>Dancer</option>
-        <option>Face portrait</option><option>Hand gesture</option>
-      </optgroup>
-      <optgroup label="Architecture">
-        <option>House</option><option>Castle</option><option>Bridge</option><option>Temple</option>
-        <option>Street scene</option><option>City skyline</option>
-      </optgroup>
-      <optgroup label="Nature">
-        <option>Tree</option><option>Mountain</option><option>Sunrise</option><option>Ocean</option>
-        <option>Flower</option><option>Galaxy</option><option>Clouds</option>
-      </optgroup>
-      <optgroup label="Objects">
-        <option>Car</option><option>Motorcycle</option><option>Airplane</option><option>Guitar</option>
-        <option>Camera</option><option>Book</option><option>Coffee cup</option>
-      </optgroup>
-      <optgroup label="Food">
-        <option>Ice cream</option><option>Pizza</option><option>Burger</option><option>Sushi</option>
-        <option>Fruit bowl</option><option>Cake</option>
-      </optgroup>
-      <optgroup label="Abstract & Logo">
-        <option>Logo</option><option>Geometric pattern</option><option>Zentangle art</option><option>Heart symbol</option>
-        <option>Spiral design</option><option>Infinity shape</option>
-      </optgroup>
-    </select>
+    <!-- Mode Switch -->
+    <div class="mode-toggle">
+      <label>
+        <input type="checkbox" id="proToggle" />
+        Pro Mode
+      </label>
+    </div>
 
-    <label>✏️ 畫具 (Sketch Tool)</label>
-    <select id="tool">
-      <option value="auto">Auto</option>
-      <option>Pencil</option><option>Ink pen</option><option>Brush pen</option><option>Marker pen</option>
-      <option>Colored pencil</option><option>Chalk</option><option>Crayon</option><option>Charcoal stick</option>
-    </select>
+    <!-- Verified Presets -->
+    <div class="field">
+      <label>✅ Verified One-Stroke Preset</label>
+      <select id="preset">
+        <option value="">(None)</option>
+        <option value="infinity">Infinity loop (single stroke)</option>
+        <option value="spiral">Center-out spiral (single stroke)</option>
+        <option value="heart">Heart loop (one stroke)</option>
+        <option value="wave">Continuous wave line</option>
+        <option value="zigzag">Continuous zigzag path</option>
+      </select>
+      <p class="hint">選擇已驗證的一筆畫圖形，可提高畫面穩定與辨識度。</p>
+    </div>
 
-    <label>🎨 上色工具 (Color Tool)</label>
-    <select id="colorTool">
-      <option value="auto">Auto</option>
-      <option>Color markers</option><option>Watercolor brush</option><option>Pastel</option>
-      <option>Acrylic brush</option><option>Oil brush</option><option>Digital stylus</option><option>Ink brush</option>
-    </select>
+    <!-- Subject -->
+    <div class="field">
+      <label>🎯 Subject（簡單線條主題 / Auto）</label>
+      <div class="field-row">
+        <select id="subject">
+          <option value="auto">Auto</option>
+          <option value="simple abstract single-line shape">Simple abstract single-line shape</option>
+          <option value="minimal geometric single-line loop">Minimal geometric single-line loop</option>
+          <option value="single-line contour path">Single-line contour path</option>
+        </select>
+        <label class="lock-label">
+          <input type="checkbox" class="lock" data-target="subject">🔒
+        </label>
+      </div>
+    </div>
 
-    <label>🌈 色彩風格 (Color Style)</label>
-    <select id="palette">
-      <option value="auto">Auto</option>
-      <option>Vibrant tones</option><option>Soft pastel</option><option>Warm earthy colors</option>
-      <option>Cool neon tones</option><option>Cartoon style</option><option>Illustration style</option>
-      <option>Realistic tone</option>
-    </select>
+    <!-- Platform -->
+    <div class="field">
+      <label>🧩 Platform</label>
+      <select id="platform">
+        <option value="sora">Sora</option>
+        <option value="runway">Runway</option>
+        <option value="pika">Pika</option>
+      </select>
+    </div>
 
-    <label>🪵 背景 (Background)</label>
-    <select id="background">
-      <option value="auto">Auto</option>
-      <option>White paper</option><option>Kraft paper</option><option>Wooden desk</option>
-      <option>Sketchbook texture</option><option>Black paper</option>
-    </select>
+    <!-- Speed -->
+    <div class="field">
+      <label>⚡ Speed</label>
+      <div class="field-row">
+        <select id="speed">
+          <option value="auto">Auto</option>
+          <option value="fast">Fast</option>
+          <option value="2x">2x Speed</option>
+          <option value="4x">4x Speed</option>
+        </select>
+        <label class="lock-label">
+          <input type="checkbox" class="lock" data-target="speed">🔒
+        </label>
+      </div>
+    </div>
 
-    <label>⚡ 速度 (Speed)</label>
-    <select id="speed">
-      <option value="auto">Auto</option>
-      <option value="fast">Fast</option>
-      <option value="2x speed">2x Speed</option>
-      <option value="4x speed">4x Speed</option>
-    </select>
+    <!-- Time -->
+    <div class="field">
+      <label>⏱️ Total Time</label>
+      <div class="field-row">
+        <select id="totalTime">
+          <option value="auto">Auto</option>
+          <option value="10">10s</option>
+          <option value="15">15s</option>
+        </select>
+        <label class="lock-label">
+          <input type="checkbox" class="lock" data-target="totalTime">🔒
+        </label>
+      </div>
+    </div>
 
-    <label>⏱️ 秒數 (Total Time)</label>
-    <select id="totalTime">
-      <option value="auto">Auto</option>
-      <option value="10">10</option>
-      <option value="15">15</option>
-    </select>
+    <!-- Strict One-Stroke -->
+    <div class="field pro-only">
+      <label class="switch">
+        <input type="checkbox" id="strict" checked />
+        <span>Strict minimal one-stroke（no lifting / no breaks / no retracing / no shading / no coloring）</span>
+      </label>
+    </div>
 
-    <button onclick="generatePrompt()">🎬 生成 Prompt</button>
+    <!-- Background (Pro) -->
+    <div class="field pro-only">
+      <label>🪵 Background</label>
+      <div class="field-row">
+        <select id="background">
+          <option value="auto">Auto</option>
+          <option value="clean white paper">Clean white paper</option>
+          <option value="ivory sketch paper">Ivory sketch paper</option>
+          <option value="kraft paper">Kraft paper</option>
+          <option value="black paper with a white gel pen">Black paper with white gel pen</option>
+        </select>
+        <label class="lock-label">
+          <input type="checkbox" class="lock" data-target="background">🔒
+        </label>
+      </div>
+    </div>
 
-    <textarea id="output" readonly placeholder="Your AI Prompt will appear here..."></textarea>
+    <!-- Tool (Pro) -->
+    <div class="field pro-only">
+      <label>✏️ Tool</label>
+      <div class="field-row">
+        <select id="tool">
+          <option value="auto">Auto</option>
+          <option value="fine ink pen">Fine ink pen</option>
+          <option value="pencil">Pencil</option>
+          <option value="brush pen">Brush pen</option>
+          <option value="fine marker pen">Fine marker pen</option>
+        </select>
+        <label class="lock-label">
+          <input type="checkbox" class="lock" data-target="tool">🔒
+        </label>
+      </div>
+    </div>
+
+    <!-- Hook (Pro) -->
+    <div class="field pro-only">
+      <label class="switch">
+        <input type="checkbox" id="hookEnabled" checked />
+        <span>Hook：影片一開始就進入動作＋讓人猜這是一筆畫什麼</span>
+      </label>
+      <select id="hookStyle">
+        <option value="mystery">Guess what it is</option>
+        <option value="challenge">One-stroke challenge</option>
+        <option value="satisfying">Oddly satisfying</option>
+      </select>
+    </div>
+
+    <!-- Finish Ratio (Pro) -->
+    <div class="field pro-only">
+      <label>✅ 完成時機（畫完佔全片比例）</label>
+      <select id="finishRatio">
+        <option value="auto">Auto（依節奏自動 85–95%）</option>
+        <option value="0.8">80% 完成，20% 停留成果</option>
+        <option value="0.9">90% 完成，10% 停留成果</option>
+        <option value="0.95">95% 完成，短暫停留</option>
+      </select>
+    </div>
+
+    <!-- Pattern (Pro) -->
+    <div class="field pro-only">
+      <label>📈 節奏模式 (Stroke Rhythm)</label>
+      <select id="pattern">
+        <option value="auto">Auto（偏向 Reveal）</option>
+        <option value="smooth">Smooth（全程順）</option>
+        <option value="snappy">Snappy（前快後穩）</option>
+        <option value="reveal">Reveal Focus（後段顯形）</option>
+      </select>
+    </div>
+
+    <!-- Series Mode (Pro) -->
+    <div class="field pro-only">
+      <label class="switch">
+        <input type="checkbox" id="seriesMode" />
+        <span>系列模式：固定背景/工具/節奏，只換圖形（打造 Andy 一筆畫風格）</span>
+      </label>
+    </div>
+
+    <!-- A/B Test (Pro) -->
+    <div class="field pro-only">
+      <label class="switch">
+        <input type="checkbox" id="abTest" />
+        <span>A/B 測試：同主題輸出兩種不同節奏，用 Shorts 數據看誰表現好</span>
+      </label>
+    </div>
+
+    <!-- Batch (Pro) -->
+    <div class="field pro-only">
+      <label>📦 Batch（一次產生多組，1–10）</label>
+      <input type="number" id="batchCount" min="1" max="10" value="1" />
+    </div>
+
+    <!-- Buttons -->
     <div class="btns">
-      <button onclick="copyPrompt()">📋 Copy</button>
+      <button onclick="generatePrompt()">🎬 Generate</button>
       <button onclick="randomAll()">🎲 Random All</button>
+      <button onclick="copyPrompt()">📋 Copy</button>
+    </div>
+
+    <!-- Output -->
+    <div class="field">
+      <label>📝 Prompt Output</label>
+      <textarea id="output" readonly placeholder="Your one-stroke video prompt will appear here..."></textarea>
+    </div>
+
+    <!-- YT Meta -->
+    <div class="field pro-only">
+      <label>📺 YouTube Shorts Title & Tags</label>
+      <textarea id="ytmeta" readonly placeholder="Auto-generated title & tags for Shorts..."></textarea>
+      <button class="subbtn" onclick="copyYT()">📋 Copy Title/Tags</button>
     </div>
   </main>
 
@@ -105,8 +217,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // (Optional) service worker registration can be added later if needed.
-  </script>
 </body>
 </html>
